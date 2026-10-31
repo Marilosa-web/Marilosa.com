@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marilosa · Calm advice for shorthanded crews</title>
+<meta name="description" content="Marilosa is a concept for an advisory assistant for motor yachts with small crews. It helps prepare voyages, notice changes and learn after every season. Marilosa advises. The captain decides.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:Nunito;src:url('fonts/Nunito.ttf') format('truetype');font-weight:200 1000;font-display:swap}
+:root{--navy:#153B60;--teal:#438F94;--paper:#F4F7F8;--mist:#E4ECEF;--line:#617D8E;--muted:#526A7C;
+--prevent:#2B666E;--detect:#8DAAC0;--respond:#D7E6E2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Nunito,system-ui,sans-serif;color:var(--navy);background:#fff;font-size:18px;line-height:1.55}
+a{color:var(--navy)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+header{position:sticky;top:0;background:rgba(255,255,255,.96);border-bottom:1px solid var(--mist);z-index:5}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+header img{height:46px;display:block}
+nav{display:flex;gap:24px;font-weight:700;font-size:16px}
+nav a{text-decoration:none}
+nav a:hover,nav a:focus-visible{text-decoration:underline;text-underline-offset:4px}
+.badge{display:inline-block;font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--prevent);background:var(--paper);border:1px solid var(--mist);border-radius:6px;padding:4px 10px}
+h1{font-size:56px;line-height:1.05;font-weight:800;letter-spacing:-.01em}
+h2{font-size:36px;line-height:1.15;font-weight:800;margin-bottom:16px}
+h3{font-size:20px;font-weight:800;margin-bottom:6px}
+.lead{font-size:21px;max-width:720px}
+section{padding:80px 0;border-bottom:1px solid var(--mist)}
+.hero{padding:72px 0 64px}
+.hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero p.lead{margin:20px 0 16px}
+.core{font-weight:800;font-size:21px;margin-top:8px}
+.hero img{width:100%;max-width:420px;display:block;margin:0 auto}
+.eyebrow{font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:32px}
+.card{border-top:4px solid var(--teal);padding-top:14px}
+.card p{font-size:17px}
+.stat{font-size:40px;font-weight:800;line-height:1}
+.note{font-size:14px;color:var(--muted);margin-top:16px}
+.model img{width:100%;max-width:980px;display:block;margin:24px auto 8px}
+.layers{display:grid;gap:10px;margin-top:24px}
+.layer{display:grid;grid-template-columns:220px 1fr 1fr;border:1px solid var(--mist);border-radius:8px;overflow:hidden;font-size:16px}
+.layer>div{padding:14px 16px}
+.layer .nm{font-weight:800;font-size:20px;line-height:1.2}
+.layer .k{font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.layer .m{background:var(--paper)}
+.pv{background:var(--prevent);color:#fff}.dt{background:var(--detect)}.rs{background:var(--respond)}.ln{background:var(--navy);color:#fff}
+.pv .wh,.ln .wh{color:#E4ECEF}
+ul.pr{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:16px 40px;margin-top:24px}
+ul.pr li{padding-left:22px;position:relative;font-size:17px}
+ul.pr li:before{content:"";position:absolute;left:0;top:9px;width:10px;height:10px;border-radius:50%;background:var(--teal)}
+.sdg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:28px}
+.sdg div{background:var(--paper);border-radius:8px;padding:18px}
+.sdg b{display:block;font-size:15px;letter-spacing:.04em;margin-bottom:4px}
+.sdg p{font-size:16px}
+.status{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:24px}
+.status ol{padding-left:22px}
+.status li{margin-bottom:8px;font-size:17px}
+footer{background:var(--navy);color:#fff;padding:48px 0}
+footer .wrap{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+footer img{height:56px}
+footer p{font-size:15px;color:#E4ECEF}
+footer .promise{font-size:22px;font-weight:800;color:#fff;margin-bottom:6px}
+a:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+@media (max-width:900px){
+ nav{display:none}
+ h1{font-size:40px} h2{font-size:28px}
+ .hero .grid,.status,footer .wrap{grid-template-columns:1fr}
+ .hero img{max-width:200px;margin:8px 0 0}
+ .cols3,.sdg{grid-template-columns:1fr 1fr}
+ .layer{grid-template-columns:1fr}
+ ul.pr{grid-template-columns:1fr}
+ section{padding:56px 0}
+}
+@media (max-width:560px){ .wrap{padding:0 18px} .cols3,.sdg{grid-template-columns:1fr} header img{height:38px} }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a href="#top" aria-label="Marilosa home"><img src="assets/marilosa-logo.svg" alt="Marilosa: Enjoy safe, well-prepared voyages."></a>
+  <nav aria-label="Main"><a href="#idea">The idea</a><a href="#model">The model</a><a href="#principles">Principles</a><a href="#sustainability">Sustainability</a><a href="#status">Status</a></nav>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap grid">
+  <div>
+    <span class="badge">Concept in development · trials planned for 2027</span>
+    <h1 style="margin-top:18px">Calm advice for shorthanded crews</h1>
+    <p class="lead">Marilosa is an advisory assistant for motor yachts run by a captain and one or two crew. It brings together what the boat, the forecast, the maintenance log and the crew already know, shows what it means for this crew today, and suggests options.</p>
+    <p class="core">Marilosa advises. The captain decides.</p>
+  </div>
+  <img src="assets/marilosa-symbol.svg" alt="" aria-hidden="true">
+</div></section>
+
+<section id="idea"><div class="wrap">
+  <p class="eyebrow">The idea</p>
+  <h2>Most of safety is decided before departure</h2>
+  <p class="lead">Running a yacht asks a lot of a few people. The information they need lives in separate places: instruments, maintenance records, charts, forecasts, AIS and the crew’s own knowledge. Each tool does one job well; none asks what it all means for this crew, today.</p>
+  <div class="cols3">
+    <div class="card"><h3>Prepares</h3><p>A short pre-departure check of crew, vessel, conditions, area and passage, so gaps show up at the dock rather than at sea.</p></div>
+    <div class="card"><h3>Notices</h3><p>Underway, it compares weather, traffic, technical trends and the health of its own data with the plan, and says plainly when information is missing or old.</p></div>
+    <div class="card"><h3>Supports and learns</h3><p>When something happens, a one-screen situation brief with options. After the voyage, a short debrief that makes the next one better.</p></div>
+  </div>
+  <div class="cols3" style="margin-top:48px">
+    <div><div class="stat">3 in 4</div><p>recreational boating deaths were drownings</p></div>
+    <div><div class="stat">Most</div><p>drowning victims were not wearing a life jacket</p></div>
+    <div><div class="stat">~70%</div><p>of deaths occurred where the operator had no boating instruction</p></div>
+  </div>
+  <p class="note">US Coast Guard, Recreational Boating Statistics 2024. Preparation can change these factors.</p>
+</div></section>
+
+<section id="model" class="model"><div class="wrap">
+  <p class="eyebrow">The model</p>
+  <h2>Four layers, one voyage</h2>
+  <p class="lead">The model borrows the levels of prevention from healthcare. Learning is the hull that carries everything; most of the work happens at Prevent, where it costs least. On every layer the crew uses an established method, and Marilosa supports it.</p>
+  <img src="assets/marilosa-model.svg" alt="The Marilosa model: a motor yacht with Learn as the hull and Prevent, Detect and Respond as decks, inside a yearly plan-do-study-act cycle, with a smaller cycle for each voyage.">
+  <p class="note" style="text-align:center"><a href="assets/marilosa-model.svg">Open the model full size</a></p>
+  <div class="layers">
+    <div class="layer"><div class="pv"><div class="nm">Prevent</div><div class="wh">Prepare and reduce risk</div></div><div><div class="k">The crew</div>IMSAFE self-check and a short plan with clear roles</div><div class="m"><div class="k">Marilosa</div>A pre-departure check of crew, vessel, conditions, area and passage</div></div>
+    <div class="layer"><div class="dt"><div class="nm">Detect</div><div class="wh">Notice changes and gaps</div></div><div><div class="k">The crew</div>Keeps the look-out and speaks up early</div><div class="m"><div class="k">Marilosa</div>Watches weather against forecast, traffic, technical trends and data health</div></div>
+    <div class="layer"><div class="rs"><div class="nm">Respond</div><div class="wh">Coordinate a deliberate response</div></div><div><div class="k">The crew</div>Says it clearly with SBAR</div><div class="m"><div class="k">Marilosa</div>Stop and think: safety of life first, time and sea room, options, pass on with consent</div></div>
+    <div class="layer"><div class="ln"><div class="nm">Learn</div><div class="wh">Improve through every voyage and season</div></div><div><div class="k">The crew</div>A three-question debrief</div><div class="m"><div class="k">Marilosa</div>Logs events and near misses and proposes changes the captain approves</div></div>
+  </div>
+</div></section>
+
+<section id="principles"><div class="wrap">
+  <p class="eyebrow">Principles</p>
+  <h2>Built to be trusted</h2>
+  <ul class="pr">
+    <li><b>The captain is in command.</b> Marilosa advises; it never steers, switches or sends commands.</li>
+    <li><b>Nothing depends on it.</b> Everything on board works with Marilosa switched off.</li>
+    <li><b>Missing is never reassuring.</b> Old or missing information is shown as old or missing.</li>
+    <li><b>Facts are kept apart.</b> What was observed, what is inferred and what may be the cause are shown separately.</li>
+    <li><b>Options stay visible.</b> Advice comes with alternatives and the reasons for them.</li>
+    <li><b>Learning proposes.</b> Changes to checklists and settings need the captain’s approval.</li>
+    <li><b>Familiar at the helm.</b> Designed following maritime interface conventions, with day, dusk and night modes.</li>
+    <li><b>Your data stays on board.</b> Shared only with consent; crew health answers never leave the tablet.</li>
+  </ul>
+</div></section>
+
+<section id="sustainability"><div class="wrap">
+  <p class="eyebrow">Sustainability</p>
+  <h2>Good for the crew and the sea</h2>
+  <p class="lead">Marilosa follows the UN Sustainable Development Goals with simple indicators, measured on board and owned by the crew.</p>
+  <div class="sdg">
+    <div><b>SDG 3 · Health</b><p>Life jackets worn and serviced, man-overboard drills, beacons registered, crew trained.</p></div>
+    <div><b>SDG 13 · Climate</b><p>Litres per nautical mile, time at economical speed, energy not from burning fuel.</p></div>
+    <div><b>SDG 14 · Life below water</b><p>Anchoring on sand rather than seagrass, correct discharge, a clean hull.</p></div>
+    <div><b>SDG 12 · Responsible use</b><p>Maintenance on time and repair before replace, so equipment lasts longer.</p></div>
+  </div>
+</div></section>
+
+<section id="status"><div class="wrap">
+  <p class="eyebrow">Status</p>
+  <h2>Where we are</h2>
+  <div class="status">
+    <div>
+      <p>Marilosa is a concept in development. The concept documentation covers principles, the model, intended purpose and safety behaviour. Version 1 is for privately used motor yachts with a small crew.</p>
+      <p style="margin-top:12px">We welcome conversations with research partners, experienced skippers and crews interested in taking part in trials.</p>
+      <!-- CONTACT: replace this paragraph with the contact e-mail once it exists, e.g. <a href="mailto:hello@marilosa.com">hello@marilosa.com</a> -->
+      <p style="margin-top:12px"><b>Contact details will follow shortly.</b></p>
+    </div>
+    <div>
+      <h3>Next steps</h3>
+      <ol>
+        <li>Validate the concept with skippers and long-distance crews.</li>
+        <li>Build a minimal prototype of the pre-departure check and the situation brief.</li>
+        <li>Test it on board in 2027.</li>
+      </ol>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <img src="assets/marilosa-logo-white.svg" alt="Marilosa">
+  <div>
+    <p class="promise">Enjoy safe, well-prepared voyages.</p>
+    <p>Marilosa · Marine Learning, Operations, and Safety Advisor</p>
+    <p style="margin-top:10px">Marilosa is in development; this page describes intended functions. No cookies, no tracking. © 2026 Marilosa.</p>
+  </div>
+</div></footer>
+</body>
+</html>
