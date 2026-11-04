@@ -51,7 +51,11 @@ section{padding:80px 0;border-bottom:1px solid var(--mist)}
 .card p{font-size:17px}
 .stat{font-size:40px;font-weight:800;line-height:1}
 .note{font-size:14px;color:var(--muted);margin-top:16px}
-.model img{width:100%;max-width:980px;display:block;margin:24px auto 8px}
+.model img{width:100%;max-width:980px;height:auto;display:block;margin:24px auto 8px}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:16px}
+.steps a{text-decoration:none;font-weight:800;font-size:15px}
+.steps img{margin:0 0 6px;border:1px solid var(--mist);border-radius:8px}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
 .layers{display:grid;gap:10px;margin-top:24px}
 .layer{display:grid;grid-template-columns:220px 1fr 1fr;border:1px solid var(--mist);border-radius:8px;overflow:hidden;font-size:16px}
 .layer>div{padding:14px 16px}
@@ -126,14 +130,22 @@ a:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
 <section id="model" class="model"><div class="wrap">
   <p class="eyebrow">The model</p>
   <h2>Four layers, one voyage</h2>
-  <p class="lead">The model borrows the levels of prevention from healthcare. Learning is the hull that carries everything; most of the work happens at Prevent, where it costs least. On every layer the crew uses an established method, and Marilosa supports it.</p>
-  <img src="assets/marilosa-model.svg" alt="The Marilosa model: a motor yacht with Learn as the hull and Prevent, Detect and Respond as decks, inside a yearly plan-do-study-act cycle, with a smaller cycle for each voyage.">
-  <p class="note" style="text-align:center"><a href="assets/marilosa-model.svg">Open the model full size</a></p>
+  <p class="lead">The three decks follow the levels of prevention used in healthcare and safety work: Prevent stops trouble before it starts, Detect notices it early, Respond limits the harm. Learning is the hull that carries them all. On every layer the crew uses an established method, and Marilosa supports it.</p>
+  <img src="assets/model/marilosa-model-1-overview.webp" width="1600" height="1200" alt="The Marilosa model: a motor yacht with Learn as the hull and Prevent, Detect and Respond as decks, each with the crew’s method and Marilosa’s support, inside a yearly plan-do-study-act cycle, with a smaller cycle for each voyage.">
+  <p class="note" style="text-align:center"><a href="assets/model/marilosa-model-1-overview.svg">Open the model full size</a></p>
   <div class="layers">
-    <div class="layer"><div class="pv"><div class="nm">Prevent</div><div class="wh">Prepare and reduce risk</div></div><div><div class="k">The crew</div>IMSAFE self-check and a short plan with clear roles</div><div class="m"><div class="k">Marilosa</div>A pre-departure check of crew, vessel, conditions, area and passage</div></div>
-    <div class="layer"><div class="dt"><div class="nm">Detect</div><div class="wh">Notice changes and gaps</div></div><div><div class="k">The crew</div>Keeps the look-out and speaks up early</div><div class="m"><div class="k">Marilosa</div>Watches weather against forecast, traffic, technical trends and data health</div></div>
-    <div class="layer"><div class="rs"><div class="nm">Respond</div><div class="wh">Coordinate a deliberate response</div></div><div><div class="k">The crew</div>Says it clearly with SBAR</div><div class="m"><div class="k">Marilosa</div>Stop and think: safety of life first, time and sea room, options, pass on with consent</div></div>
-    <div class="layer"><div class="ln"><div class="nm">Learn</div><div class="wh">Improve through every voyage and season</div></div><div><div class="k">The crew</div>A three-question debrief</div><div class="m"><div class="k">Marilosa</div>Logs events and near misses and proposes changes the captain approves</div></div>
+    <div class="layer"><div class="pv"><div class="nm">Prevent</div><div class="wh">Prepare and reduce risk</div></div><div><div class="k">The crew · IMSAFE</div>Each person checks privately and declares only “fit for the voyage” or “not fit”</div><div class="m"><div class="k">Marilosa · Pre-departure check</div>Crew, vessel, conditions, area and passage plan. Never blocks the boat.</div></div>
+    <div class="layer"><div class="dt"><div class="nm">Detect</div><div class="wh">Notice changes and gaps</div></div><div><div class="k">The crew · SA &amp; CUS</div>Notice, understand, look ahead, and speak up: “I’m concerned…”, “I’m uncomfortable…”, “This is a safety issue…”</div><div class="m"><div class="k">Marilosa · WATCH</div>Weather against forecast, AIS and area, technical trends, crew, and the health of its own data</div></div>
+    <div class="layer"><div class="rs"><div class="nm">Respond</div><div class="wh">Coordinate a deliberate response</div></div><div><div class="k">The crew · SBAR</div>A structured hand-over to rescue services or an expert ashore</div><div class="m"><div class="k">Marilosa · STOP</div>Stop and think: safety of life first, time and sea room, options with a situation brief, pass on with consent</div></div>
+    <div class="layer"><div class="ln"><div class="nm">Learn</div><div class="wh">Improve through every voyage and season</div></div><div><div class="k">The crew · SAIL debrief</div>Situation, actions, improvements, lessons: about a minute after a quiet voyage</div><div class="m"><div class="k">Marilosa · SAIL debrief</div>Brings the timeline from the log, drafts proposals the captain approves, and follows each action until done</div></div>
+  </div>
+  <h3 style="margin-top:40px">The model step by step</h3>
+  <div class="steps">
+    <a href="assets/model/marilosa-model-2-prevent.webp"><img src="assets/model/marilosa-model-2-prevent.webp" width="1600" height="1200" loading="lazy" alt="Prevent: the crew’s IMSAFE check and Marilosa’s pre-departure check side by side."><span>1 · Prevent</span></a>
+    <a href="assets/model/marilosa-model-3-detect.webp"><img src="assets/model/marilosa-model-3-detect.webp" width="1600" height="1200" loading="lazy" alt="Detect: the crew’s situational awareness and CUS phrases, and Marilosa’s WATCH."><span>2 · Detect</span></a>
+    <a href="assets/model/marilosa-model-4-respond.webp"><img src="assets/model/marilosa-model-4-respond.webp" width="1600" height="1200" loading="lazy" alt="Respond: the crew’s SBAR hand-over and Marilosa’s STOP."><span>3 · Respond</span></a>
+    <a href="assets/model/marilosa-model-5-learn.webp"><img src="assets/model/marilosa-model-5-learn.webp" width="1600" height="1200" loading="lazy" alt="Learn: the SAIL debrief, with the crew’s and Marilosa’s part for situation, actions, improvements and lessons."><span>4 · Learn</span></a>
+    <a href="assets/model/marilosa-model-6-cycles.webp"><img src="assets/model/marilosa-model-6-cycles.webp" width="1600" height="1200" loading="lazy" alt="The two plan-do-study-act cycles: each season and each voyage. What a voyage cannot close moves to the season cycle."><span>5 · The two cycles</span></a>
   </div>
 </div></section>
 
