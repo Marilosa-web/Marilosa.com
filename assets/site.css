@@ -106,6 +106,8 @@ header nav a[aria-current=page]{text-decoration:underline;text-decoration-thickn
 .crew{background:#fff;border:1px solid var(--mist);border-left:4px solid var(--navy)}
 .tag{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#fff;background:var(--prevent);border-radius:4px;padding:2px 8px;margin-right:6px}
 .tag.d{background:#5E7F98}.tag.r{background:#5D8C80}.tag.l{background:var(--navy)}
+.pagehead{padding:56px 0 40px;border-bottom:none;background:linear-gradient(rgba(255,255,255,.62),rgba(255,255,255,.86) 72%,#fff),url('photos/head-sea.webp') center 60%/cover no-repeat}
+.pagehead+.page{padding-top:24px}
 .photo{width:100%;height:auto;display:block;border-radius:12px}
 .banner{width:100%;height:auto;display:block;border-radius:12px;margin:28px 0 8px}
 .two{display:grid;grid-template-columns:1fr 320px;gap:40px;align-items:center}
