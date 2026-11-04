@@ -28,16 +28,13 @@
   <details class="menu"><summary aria-label="Open menu">Menu</summary><nav aria-label="Main"><a href="../idea/">The idea</a><a href="../model/" aria-current="page">The model</a><a href="../on-board/">On board</a><a href="../principles/">Principles</a><a href="../sustainability/">Sustainability</a><a href="../about/">About</a><a href="../status/">Status</a></nav></details>
 </div></header>
 <main id="top">
-<section class="pagehead"><div class="wrap">
-  <p class="eyebrow">The model</p>
-  <h1 style="font-size:44px;margin-bottom:0">Four layers, one voyage</h1>
-</div></section>
 <section class="page"><div class="wrap">
-  <p class="lead">Read it like a voyage: prepare, notice, respond, then learn. Use the buttons, the arrow keys or swipe to turn the pages; tap an image to see it full size.</p>
-  <div class="viewer" id="viewer" aria-live="polite">
-  <figure id="step-1" class="on" aria-roledescription="slide" aria-label="Step 1 of 6: The whole model">
-    <a href="../assets/model/marilosa-model-1-overview.webp" title="Open full size"><img src="../assets/model/marilosa-model-1-overview.webp" width="1600" height="1200" alt="Marilosa model, step 1 of 6: The whole model."></a>
-    <figcaption><b>Step 1 of 6 · The whole model</b>One yacht, four layers. Learn is the hull that carries the three decks: Prevent, Detect and Respond. Around it run two plan-do-study-act cycles, one for each voyage and one for each season. On every layer the crew has its own method, on the left, and Marilosa supports it, on the right.</figcaption>
+  <div class="viewer mv" id="viewer">
+  <div class="mvhead"><p class="eyebrow">The model</p><h1 class="mvh">Four layers, one voyage</h1></div>
+  <div class="stage">
+  <figure id="step-1" class="on" aria-roledescription="slide" aria-label="Step 1 of 6: Overview · the whole model">
+    <a href="../assets/model/marilosa-model-1-overview.webp" title="Open full size"><img src="../assets/model/marilosa-model-1-overview.webp" width="1600" height="1200" alt="Marilosa model, step 1 of 6: Overview · the whole model."></a>
+    <figcaption><b>Step 1 of 6 · Overview · the whole model</b>One yacht, four layers. Learn is the hull that carries the three decks: Prevent, Detect and Respond. Around it run two plan-do-study-act cycles, one for each voyage and one for each season. On every layer the crew has its own method, on the left, and Marilosa supports it, on the right.</figcaption>
   </figure>
   <figure id="step-2" class="" aria-roledescription="slide" aria-label="Step 2 of 6: Prevent · before departure">
     <a href="../assets/model/marilosa-model-2-prevent.webp" title="Open full size"><img src="../assets/model/marilosa-model-2-prevent.webp" width="1600" height="1200" alt="Marilosa model, step 2 of 6: Prevent · before departure." loading="lazy"></a>
@@ -59,23 +56,28 @@
     <a href="../assets/model/marilosa-model-6-cycles.webp" title="Open full size"><img src="../assets/model/marilosa-model-6-cycles.webp" width="1600" height="1200" alt="Marilosa model, step 6 of 6: The two cycles." loading="lazy"></a>
     <figcaption><b>Step 6 of 6 · The two cycles</b>Each voyage is plan, do, study, act, and so is each season. What a voyage cannot close moves to the season: haul-out, repairs, courses and upgrades, ready for the next season’s plan.</figcaption>
   </figure>
-  <div class="vbar">
-    <button class="back" type="button" aria-label="Previous step">← <span class="lbl">Back: </span><span class="bn"></span></button>
-    <div><div class="dots" role="group" aria-label="Choose a step"></div><div class="count"></div></div>
-    <button class="fwd" type="button" aria-label="Next step"><span class="lbl">Next: </span><span class="fn"></span> →</button>
   </div>
+  <div class="side">
+    <div class="cap" aria-live="polite"></div>
+    <div class="vbar">
+      <div class="dotrow"><div class="dots" role="group" aria-label="Choose a step"></div><div class="count"></div></div>
+      <button class="back" type="button" aria-label="Previous step">← <span class="bn"></span></button>
+      <button class="fwd" type="button" aria-label="Next step"><span class="fn"></span> →</button>
+    </div>
+    <p class="hint">Arrow keys or swipe also turn the pages. Click the image to see it full size.</p>
   </div>
-  <p class="note" style="text-align:center"><a href="../assets/model/marilosa-model-1-overview.svg">Open the overview full size</a></p>
+</div>
 <script>
 (function(){
   var v=document.getElementById('viewer'),f=v.querySelectorAll('figure'),n=f.length,i=0,
-      names=['The whole model', 'Prevent', 'Detect', 'Respond', 'Learn', 'The two cycles'],b=v.querySelector('.back'),fw=v.querySelector('.fwd'),d=v.querySelector('.dots'),c=v.querySelector('.count');
+      names=['Overview', 'Prevent', 'Detect', 'Respond', 'Learn', 'The two cycles'],b=v.querySelector('.back'),fw=v.querySelector('.fwd'),d=v.querySelector('.dots'),c=v.querySelector('.count'),cap=v.querySelector('.cap');
   for(var k=0;k<n;k++){var x=document.createElement('button');x.type='button';x.setAttribute('aria-label','Step '+(k+1)+': '+names[k]);
     (function(k){x.onclick=function(){go(k)}})(k);d.appendChild(x);}
   function go(k,keep){i=Math.max(0,Math.min(n-1,k));
     for(var j=0;j<n;j++){f[j].classList.toggle('on',j===i);d.children[j].classList.toggle('on',j===i);d.children[j].setAttribute('aria-current',j===i?'step':'false');}
+    cap.innerHTML=f[i].querySelector('figcaption').innerHTML;
     b.disabled=i===0;fw.disabled=i===n-1;
-    v.querySelector('.bn').textContent=i>0?names[i-1]:'';v.querySelector('.fn').textContent=i<n-1?names[i+1]:'End';
+    v.querySelector('.bn').textContent=i>0?'Back: '+names[i-1]:'Back';v.querySelector('.fn').textContent=i<n-1?'Next: '+names[i+1]:'The end';
     c.textContent='Step '+(i+1)+' of '+n;
     if(!keep)history.replaceState(null,'','#step-'+(i+1));}
   function show(){if(v.getBoundingClientRect().top<0)v.scrollIntoView({behavior:'smooth',block:'start'});}
