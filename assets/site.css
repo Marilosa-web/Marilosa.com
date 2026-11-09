@@ -147,3 +147,23 @@ body:has(.mv) .page{padding-top:20px}
  .js .mv .stage img{max-height:calc(100vh - 136px);width:auto;max-width:100%;margin:0 auto}
 }
 @media (max-width:899px){ .js .mv .mvhead{margin-bottom:12px} .js .mv .side{margin-top:16px} }
+
+/* Six-page layout */
+.home-layers{margin-top:56px}
+.learn-foundation{margin-top:24px;padding:16px 22px;border-radius:8px;background:var(--navy);color:#fff;font-size:17px}
+.moved-section{margin-top:48px;padding:36px 0 0;border-top:1px solid var(--mist);border-bottom:0}
+.moved-section>h2{scroll-margin-top:88px}
+.moved-section .status{align-items:start;gap:32px}
+.moved-section .status>div:last-child{padding:20px 22px;border-radius:8px;background:var(--paper)}
+.status a{overflow-wrap:anywhere}
+footer img{max-width:100%;object-fit:contain;object-position:left}
+@media (max-width:900px){
+ .home-layers{grid-template-columns:1fr;gap:20px;margin-top:36px}
+ .moved-section{margin-top:36px;padding-top:28px}
+ .menu nav{max-height:calc(100vh - 76px);max-height:calc(100dvh - 76px);overflow:auto}
+ .menu summary{min-height:44px}
+}
+@media (max-width:560px){
+ .learn-foundation{padding:14px 16px}
+ .next{flex-wrap:wrap}
+}
