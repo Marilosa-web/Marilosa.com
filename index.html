@@ -37,25 +37,48 @@
     <p class="core">Marilosa advises. The captain decides.</p>
     <p class="hero-actions"><a class="btn" href="on-board/">A voyage with Marilosa</a><a class="btn ghost" href="model/">See how it works</a></p>
   </div>
+  <button class="btn explore-button" type="button" aria-haspopup="dialog" id="open-explore">Explore <span aria-hidden="true">+</span></button>
 </section>
-<section class="page"><div class="wrap">
+<dialog class="explore-dialog" id="explore" aria-labelledby="explore-title">
+  <header class="explore-header">
+    <h2 id="explore-title">Explore Marilosa</h2>
+    <form method="dialog"><button type="submit" autofocus aria-label="Close overview">×</button></form>
+  </header>
   <p class="lead">Small crews on motor yachts carry a lot: the boat, the weather, the guests and each other. Marilosa is a calm advisor on the helm iPad. It brings together what the boat, the forecast and the crew already know, and shows what it means for this crew, today.</p>
-<div class="cols3 home-layers">
-  <div class="card"><h3>Prevent · before departure</h3><p>A short check of crew, vessel and plan, so gaps show up at the dock rather than at sea.</p></div>
-  <div class="card"><h3>Detect · underway</h3><p>Says plainly what is missing or old, and raises a concern when risks add up.</p></div>
-  <div class="card"><h3>Respond · when something happens</h3><p>Helps the crew stop and think, with options and a clear hand-over when they call for help.</p></div>
-</div>
-<p class="learn-foundation"><b>Learn</b> carries it all: after each voyage, a short debrief makes the next one better. Marilosa never steers and never decides.</p>
-  <div class="next"><span></span><a href="idea/">Next: The idea →</a></div>
-</div></section>
-</main>
-<footer><div class="wrap">
-  <img src="assets/marilosa-logo.svg" alt="Marilosa">
-  <div>
-    <p>Marilosa · Marine Learning, Operations, and Safety Advisor</p>
-    <p style="margin-top:10px">Marilosa is a concept in development; these pages describe intended functions. No cookies, no tracking. <a href="privacy.html">Privacy</a>. © 2026 Marilosa. Photo: <a href="https://www.pexels.com/photo/clear-sky-over-blue-sea-with-vessel-15027791/">Hessam Vakili / Pexels</a>.</p>
+  <div class="explore-choices" role="group" aria-label="Voyage stages">
+    <button type="button" aria-pressed="true">Prevent</button>
+    <button type="button" aria-pressed="false">Detect</button>
+    <button type="button" aria-pressed="false">Respond</button>
+    <button type="button" aria-pressed="false">Learn</button>
   </div>
-  <nav class="utility" aria-label="More about Marilosa"><a href="status/">Status</a><a href="sustainability/">Sustainability</a></nav>
-</div></footer>
+  <div class="explore-detail" aria-live="polite">
+    <div data-panel><h3>Prevent · before departure</h3><p>A short check of crew, vessel and plan, so gaps show up at the dock rather than at sea.</p></div>
+    <div data-panel hidden><h3>Detect · underway</h3><p>Says plainly what is missing or old, and raises a concern when risks add up.</p></div>
+    <div data-panel hidden><h3>Respond · when something happens</h3><p>Helps the crew stop and think, with options and a clear hand-over when they call for help.</p></div>
+    <div data-panel hidden><p><b>Learn</b> carries it all: after each voyage, a short debrief makes the next one better. Marilosa never steers and never decides.</p></div>
+  </div>
+  <a class="explore-next" href="idea/">Next: The idea →</a>
+  <footer class="explore-footer">
+    <details>
+      <summary>Site information</summary>
+      <p>Marilosa · Marine Learning, Operations, and Safety Advisor</p>
+      <p>Marilosa is a concept in development; these pages describe intended functions. No cookies, no tracking. <a href="privacy.html">Privacy</a>. © 2026 Marilosa. Photo: <a href="https://www.pexels.com/photo/clear-sky-over-blue-sea-with-vessel-15027791/">Hessam Vakili / Pexels</a>.</p>
+      <nav class="utility" aria-label="More about Marilosa"><a href="status/">Status</a><a href="sustainability/">Sustainability</a></nav>
+    </details>
+  </footer>
+</dialog>
+</main>
+<script>
+  const explore = document.querySelector('#explore');
+  document.querySelector('#open-explore').addEventListener('click', () => explore.showModal());
+  const choices = [...explore.querySelectorAll('.explore-choices button')];
+  const panels = [...explore.querySelectorAll('[data-panel]')];
+  choices.forEach((choice, index) => choice.addEventListener('click', () => {
+    choices.forEach((button, position) => {
+      button.setAttribute('aria-pressed', String(position === index));
+      panels[position].hidden = position !== index;
+    });
+  }));
+</script>
 </body>
 </html>
